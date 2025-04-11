@@ -1,3 +1,4 @@
+import 'package:d4_8_3/pages/create_page.dart';
 import 'package:get/get.dart';
 
 import 'pages/home_page.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: CreatePage(),
     );
   }
 }

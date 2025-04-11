@@ -22,7 +22,7 @@ class NetworkService {
     Uri uri = Uri.parse(baseUrl);
     await http.post(
       uri,
-      body: model.toJson(),
+      body: jsonEncode(model.toJson()),
       headers: {"Content-Type": "application/json"},
     );
   }
@@ -31,7 +31,7 @@ class NetworkService {
     Uri uri = Uri.parse("$baseUrl/${model.id}");
     await http.put(
       uri,
-      body: model.toJson(),
+      body: jsonEncode(model.toJson()),
       headers: {"Content-Type": "application/json"},
     );
   }
