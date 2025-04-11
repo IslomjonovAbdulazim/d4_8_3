@@ -20,10 +20,38 @@ class NetworkService {
 
   static Future<void> createNote(NoteModel model) async {
     Uri uri = Uri.parse(baseUrl);
+    await http.post(
+      uri,
+      body: model.toJson(),
+      headers: {"Content-Type": "application/json"},
+    );
+  }
+
+  static Future<void> updateNote(NoteModel model) async {
+    Uri uri = Uri.parse("$baseUrl/${model.id}");
     await http.put(
       uri,
       body: model.toJson(),
       headers: {"Content-Type": "application/json"},
     );
   }
+
+  static Future<void> deleteNote(NoteModel model) async {
+    Uri uri = Uri.parse("$baseUrl/${model.id}");
+    await http.delete(uri);
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
